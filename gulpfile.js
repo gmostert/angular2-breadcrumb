@@ -35,4 +35,4 @@ gulp.task('bundle', function() {
         .pipe(gulp.dest('./bundles')); // Generate bundle file
 });
 
-gulp.task('default', ['build']);
+gulp.task('default', ['clean','build']);
