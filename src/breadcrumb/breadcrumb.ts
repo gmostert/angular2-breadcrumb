@@ -47,9 +47,9 @@ export class BreadcrumbComponent {
 
     constructor(private router: Router, private location: Location, private breadcrumbService: BreadcrumbService) {
         this._urls = new Array();
-        this.router.changes.subscribe(() => {
+        this.router.events.subscribe(() => {
             this._urls.length = 0; //Fastest way to clear out array
-            this.generateBreadcrumbTrail(this.location.platformStrategy.path());
+            this.generateBreadcrumbTrail(this.location.path());
         });
     }
 
