@@ -5,7 +5,7 @@
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc\" \"npm run lite\" ",
     "lite": "lite-server",
-    "postinstall": "typings install; npm run tsc",
+    "postinstall": "typings install",
     "tsc": "tsc -w",
     "typings": "typings",
     "build": "tsc",
