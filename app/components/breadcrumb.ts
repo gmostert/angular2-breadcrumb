@@ -56,7 +56,7 @@ export class BreadcrumbComponent {
             //Add url to beginning of array (since the url is being recursively broken down from full url to its parent)
             this._urls.unshift(url);
         }
-        
+
         if (url.lastIndexOf('/') > 0) {
             this.generateBreadcrumbTrail(url.substr(0, url.lastIndexOf('/'))); //Find last '/' and add everything before it as a parent route
         }
