@@ -1,0 +1,8 @@
+<div>
+    <ul class="breadcrumb">
+        <li *ngFor="let url of _urls; let last = last" [ngClass]="{'active': last}"> <!-- disable link of last item -->
+            <a role="button" *ngIf="!last" (click)="navigateTo(url)">{{friendlyName(url)}}</a>
+            <span *ngIf="last">{{friendlyName(url)}}</span>
+        </li>
+    </ul>
+</div>
