@@ -8,36 +8,8 @@ import {BreadcrumbService} from './breadcrumbService';
  */
 @Component({
     selector: 'breadcrumb',
-    template: `
-        <div>
-            <ul class="breadcrumb">
-                <li *ngFor="let url of _urls; let last = last" [ngClass]="{'active': last}"> <!-- disable link of last item -->
-                    <a role="button" *ngIf="!last" (click)="navigateTo(url)">{{friendlyName(url)}}</a>
-                    <span *ngIf="last">{{friendlyName(url)}}</span>
-                </li>
-            </ul>
-        </div>
-    `,
-    styles: [`
-      .breadcrumb {
-        padding: 8px 15px;
-        margin-bottom: 20px;
-        list-style: none;
-        background-color: transparent;
-        border-radius: 3px;
-      }
-      .breadcrumb > li {
-        display: inline-block;
-      }
-      .breadcrumb > li + li:before {
-        content: "/";
-        padding: 0 5px;
-        color: #999999;
-      }
-      .breadcrumb > .active {
-        color: #555555;
-      }
-   `]
+    templateUrl: '../html/breadcrumb.html',
+    styleUrls: ['../css/breadcrumb.css']
 })
 export class BreadcrumbComponent {
 
