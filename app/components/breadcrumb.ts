@@ -17,27 +17,7 @@ import {BreadcrumbService} from './breadcrumbService';
                 </li>
             </ul>
         </div>
-    `,
-    styles: [`
-      .breadcrumb {
-        padding: 8px 15px;
-        margin-bottom: 20px;
-        list-style: none;
-        background-color: transparent;
-        border-radius: 3px;
-      }
-      .breadcrumb > li {
-        display: inline-block;
-      }
-      .breadcrumb > li + li:before {
-        content: "/";
-        padding: 0 5px;
-        color: #999999;
-      }
-      .breadcrumb > .active {
-        color: #555555;
-      }
-   `]
+    `
 })
 export class BreadcrumbComponent {
 
