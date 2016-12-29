@@ -1,13 +1,11 @@
 {
   "name": "ng2-breadcrumb",
-  "version": "0.5.2",
+  "version": "0.5.4",
   "description": "A component that creates a breadcrumb trail for router paths",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc\" \"npm run lite\" ",
     "lite": "lite-server",
-    "postinstall": "typings install",
     "tsc": "tsc -w",
-    "typings": "typings",
     "build": "tsc",
     "bundles": "tsc -m system --rootDir ./app --outFile ./bundles/ng2-breadcrumb.js"
   },
@@ -41,6 +39,10 @@
     "concurrently": "^3.1.0",
     "lite-server": "^2.2.2",
     "typescript": "^2.0.3",
-    "typings": "^1.3.2"
+    "@types/core-js": "^0.9.35",
+    "@types/node": "^6.0.54",
+    "@types/jasmine": "^2.5.40",
+    "@types/moment": "^2.13.0",
+    "@types/es6-shim": "^0.31.32"
   }
 }
