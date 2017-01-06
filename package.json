@@ -7,7 +7,7 @@
     "lite": "lite-server",
     "tsc": "tsc -w",
     "build": "tsc",
-    "bundles": "tsc -m system --rootDir ./app --outFile ./bundles/ng2-breadcrumb.js"
+    "bundles": "tsc -m system --rootDir ./lib --outFile ./bundles/ng2-breadcrumb.js"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, OnChanges} from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
-import {BreadcrumbService} from './breadcrumbService';
+import {BreadcrumbService} from './breadcrumb.service';
 
 /**
  * This component shows a breadcrumb trail for available routes the router can navigate to.
@@ -19,10 +19,10 @@ import {BreadcrumbService} from './breadcrumbService';
         </ul>
     `
 })
-export class BreadcrumbComponent implements OnInit, OnChanges {
+export class Ng2BreadcrumbComponent implements OnInit, OnChanges {
     @Input() useBootstrap: boolean = true;
     @Input() prefix:       string  = '';
-    
+
     private _urls: string[];
     private _routerSubscription: any;
 
@@ -33,7 +33,7 @@ export class BreadcrumbComponent implements OnInit, OnChanges {
 
     ngOnInit(): void {
         this._urls = new Array();
-        
+
         if (this.prefix.length > 0) {
             this._urls.unshift(this.prefix);
         }
@@ -48,7 +48,7 @@ export class BreadcrumbComponent implements OnInit, OnChanges {
         if (!this._urls) {
             return;
         }
-        
+
         this._urls.length = 0;
         this.generateBreadcrumbTrail(this.router.url);
     }
