@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { BreadcrumbService } from '../app/app.module';
+import { Ng2BreadcrumbService } from '../lib/breadcrumb.service';
 
 @Component({
     selector: 'app',
@@ -13,7 +13,7 @@ import { BreadcrumbService } from '../app/app.module';
     `
 })
 export class AppComponent {
-    constructor(private breadcrumbService: BreadcrumbService) {
+    constructor(private breadcrumbService: Ng2BreadcrumbService) {
         breadcrumbService.addFriendlyNameForRoute('/comp1', 'Comp 1');
         breadcrumbService.addFriendlyNameForRouteRegex('^/comp1/comp[0-9]$', 'Comp 2');
         breadcrumbService.hideRoute('/comp1/comp2/comp3');

@@ -1,13 +1,13 @@
 import {Component, Input, OnInit, OnChanges} from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
-import {BreadcrumbService} from './breadcrumb.service';
+import {Ng2BreadcrumbService} from './breadcrumb.service';
 
 /**
  * This component shows a breadcrumb trail for available routes the router can navigate to.
  * It subscribes to the router in order to update the breadcrumb trail as you navigate to a component.
  */
 @Component({
-    selector: 'breadcrumb',
+    selector: 'ng2-breadcrumb',
     template: `
         <ul [class.breadcrumb]="useBootstrap">
             <li *ngFor="let url of _urls; let last = last" [ngClass]="{'active': last}"> <!-- disable link of last item -->
@@ -28,7 +28,7 @@ export class Ng2BreadcrumbComponent implements OnInit, OnChanges {
 
     constructor(
         private router: Router,
-        private breadcrumbService: BreadcrumbService
+        private breadcrumbService: Ng2BreadcrumbService
     ) {}
 
     ngOnInit(): void {
