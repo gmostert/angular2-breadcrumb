@@ -19,11 +19,10 @@ Install the module via npm:
 ## Usage
 Import the breadcrumb module into your module and provide its service
 
-	import {Ng2BreadcrumbModule, BreadcrumbService} from 'ng2-breadcrumb/ng2-breadcrumb';
+	import {Ng2BreadcrumbModule, Ng2BreadcrumbService} from 'ng2-breadcrumb/ng2-breadcrumb';
 
 	@NgModule({
-        imports: [Ng2BreadcrumbModule],
-        providers: [BreadcrumbService]
+        imports: [Ng2BreadcrumbModule.forRoot()]
     })
     export class AppModule {
         ...
@@ -32,7 +31,7 @@ Import the breadcrumb module into your module and provide its service
 Inject the BreadcrumbService into your component
 
     export class AppComponent {
-        constructor(private breadcrumbService: BreadcrumbService) {
+        constructor(private breadcrumbService: Ng2BreadcrumbService) {
         }
     }
 
