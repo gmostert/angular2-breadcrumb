@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import { Injectable } from "@angular/core";
 
 @Injectable()
 export class Ng2BreadcrumbService {
@@ -54,7 +54,7 @@ export class Ng2BreadcrumbService {
      */
     getFriendlyNameForRoute(route: string): string {
         let name;
-        let routeEnd = route.substr(route.lastIndexOf('/')+1, route.length);
+        let routeEnd = route.substr(route.lastIndexOf('/') + 1, route.length);
 
         this.routesFriendlyNames.forEach((value, key, map) => {
             if (key === route) {

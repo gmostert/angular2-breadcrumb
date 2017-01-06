@@ -1,6 +1,6 @@
-import {Component, Input, OnInit, OnChanges} from '@angular/core';
-import {Router, NavigationEnd} from '@angular/router';
-import {Ng2BreadcrumbService} from './breadcrumb.service';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { Ng2BreadcrumbService } from './breadcrumb.service';
 
 /**
  * This component shows a breadcrumb trail for available routes the router can navigate to.
@@ -21,15 +21,14 @@ import {Ng2BreadcrumbService} from './breadcrumb.service';
 })
 export class Ng2BreadcrumbComponent implements OnInit, OnChanges {
     @Input() useBootstrap: boolean = true;
-    @Input() prefix:       string  = '';
+    @Input() prefix: string = '';
 
     private _urls: string[];
     private _routerSubscription: any;
 
-    constructor(
-        private router: Router,
-        private breadcrumbService: Ng2BreadcrumbService
-    ) {}
+    constructor(private router: Router,
+                private breadcrumbService: Ng2BreadcrumbService) {
+    }
 
     ngOnInit(): void {
         this._urls = new Array();
@@ -38,7 +37,7 @@ export class Ng2BreadcrumbComponent implements OnInit, OnChanges {
             this._urls.unshift(this.prefix);
         }
 
-        this._routerSubscription = this.router.events.subscribe((navigationEnd:NavigationEnd) => {
+        this._routerSubscription = this.router.events.subscribe((navigationEnd: NavigationEnd) => {
             this._urls.length = 0; //Fastest way to clear out array
             this.generateBreadcrumbTrail(navigationEnd.urlAfterRedirects ? navigationEnd.urlAfterRedirects : navigationEnd.url);
         });
