@@ -87,7 +87,7 @@ export class BreadcrumbService {
      * Specify a route (url) that should not be shown in the breadcrumb.
      */
     hideRoute(route: string): void {
-        if (!this.hideRoutes.includes(route)) {
+        if (this.hideRoutes.indexOf(route) === -1) {
             this.hideRoutes.push(route);
         }
     }
@@ -96,7 +96,7 @@ export class BreadcrumbService {
      * Specify a route (url) regular expression that should not be shown in the breadcrumb.
      */
     hideRouteRegex(routeRegex: string): void {
-        if (!this.hideRoutesRegex.includes(routeRegex)) {
+        if (this.hideRoutesRegex.indexOf(routeRegex) === -1) {
             this.hideRoutesRegex.push(routeRegex);
         }
     }
@@ -105,7 +105,7 @@ export class BreadcrumbService {
      * Returns true if a route should be hidden.
      */
     isRouteHidden(route: string): boolean {
-        let hide = this.hideRoutes.includes(route);
+        let hide = this.hideRoutes.indexOf(route) > -1;
         
         this.hideRoutesRegex.forEach((value) => {
             if (new RegExp(value).exec(route)) {
