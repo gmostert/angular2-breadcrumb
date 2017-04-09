@@ -77,7 +77,7 @@ var BreadcrumbService = (function () {
      * Specify a route (url) that should not be shown in the breadcrumb.
      */
     BreadcrumbService.prototype.hideRoute = function (route) {
-        if (!this.hideRoutes.includes(route)) {
+        if (this.hideRoutes.indexOf(route) === -1) {
             this.hideRoutes.push(route);
         }
     };
@@ -85,7 +85,7 @@ var BreadcrumbService = (function () {
      * Specify a route (url) regular expression that should not be shown in the breadcrumb.
      */
     BreadcrumbService.prototype.hideRouteRegex = function (routeRegex) {
-        if (!this.hideRoutesRegex.includes(routeRegex)) {
+        if (this.hideRoutesRegex.indexOf(routeRegex) === -1) {
             this.hideRoutesRegex.push(routeRegex);
         }
     };
@@ -93,7 +93,7 @@ var BreadcrumbService = (function () {
      * Returns true if a route should be hidden.
      */
     BreadcrumbService.prototype.isRouteHidden = function (route) {
-        var hide = this.hideRoutes.includes(route);
+        var hide = this.hideRoutes.indexOf(route) > -1;
         this.hideRoutesRegex.forEach(function (value) {
             if (new RegExp(value).exec(route)) {
                 hide = true;

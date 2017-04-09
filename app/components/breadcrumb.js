@@ -22,7 +22,8 @@ var BreadcrumbComponent = (function () {
         }
         this._routerSubscription = this.router.events.subscribe(function (navigationEnd) {
             _this._urls.length = 0; //Fastest way to clear out array
-            _this.generateBreadcrumbTrail(navigationEnd.urlAfterRedirects ? navigationEnd.urlAfterRedirects : navigationEnd.url);
+            if (navigationEnd instanceof router_1.NavigationEnd)
+                _this.generateBreadcrumbTrail(navigationEnd.urlAfterRedirects ? navigationEnd.urlAfterRedirects : navigationEnd.url);
         });
     };
     BreadcrumbComponent.prototype.ngOnChanges = function (changes) {
