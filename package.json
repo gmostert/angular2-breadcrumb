@@ -21,6 +21,7 @@
   "author": "Gerhard Mostert",
   "license": "MIT",
   "main": "bundles/app.module.js",
+  "typings": "bundles/app.module.d.ts",
   "dependencies": {
     "@angular/common": "^4.0.1",
     "@angular/core": "^4.0.1",
