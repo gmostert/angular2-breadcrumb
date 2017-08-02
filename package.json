@@ -29,12 +29,14 @@
     "@angular/platform-browser": "^4.0.1",
     "@angular/platform-browser-dynamic": "^4.0.1",
     "@angular/router": "^4.0.1",
-    "bootstrap": "4.0.0-alpha.6",
     "core-js": "2.4.1",
     "reflect-metadata": "^0.1.9",
     "rxjs": "^5.3.0",
     "systemjs": "0.19.27",
     "zone.js": "^0.8.5"
+  },
+  "optionalDependencies": {
+    "bootstrap": "4.0.0-alpha.6"
   },
   "devDependencies": {
     "@angular/compiler": "^4.0.1",
