@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var BreadcrumbService = (function () {
+var BreadcrumbService = /** @class */ (function () {
     function BreadcrumbService() {
         this.routesFriendlyNames = new Map();
         this.routesFriendlyNamesRegex = new Map();
@@ -101,12 +101,12 @@ var BreadcrumbService = (function () {
         });
         return hide;
     };
+    BreadcrumbService.decorators = [
+        { type: core_1.Injectable },
+    ];
+    /** @nocollapse */
+    BreadcrumbService.ctorParameters = function () { return []; };
     return BreadcrumbService;
 }());
-BreadcrumbService.decorators = [
-    { type: core_1.Injectable },
-];
-/** @nocollapse */
-BreadcrumbService.ctorParameters = function () { return []; };
 exports.BreadcrumbService = BreadcrumbService;
 //# sourceMappingURL=breadcrumbService.js.map
