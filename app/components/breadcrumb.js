@@ -20,10 +20,14 @@ var BreadcrumbComponent = /** @class */ (function () {
         if (this.prefix.length > 0) {
             this._urls.unshift(this.prefix);
         }
-        this._routerSubscription = this.router.events.subscribe(function (navigationEnd) {
+        this._routerSubscription = this.router
+            .events
+            .subscribe(function (navigationEnd) {
             if (navigationEnd instanceof router_1.NavigationEnd) {
                 _this._urls.length = 0; //Fastest way to clear out array
-                _this.generateBreadcrumbTrail(navigationEnd.urlAfterRedirects ? navigationEnd.urlAfterRedirects : navigationEnd.url);
+                _this.generateBreadcrumbTrail(navigationEnd.urlAfterRedirects
+                    ? navigationEnd.urlAfterRedirects
+                    : navigationEnd.url);
             }
         });
     };

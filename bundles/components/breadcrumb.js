@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { BreadcrumbService } from './breadcrumbService';
 var BreadcrumbComponent = (function () {
     function BreadcrumbComponent(router, breadcrumbService) {
@@ -14,10 +14,14 @@ var BreadcrumbComponent = (function () {
         if (this.prefix.length > 0) {
             this._urls.unshift(this.prefix);
         }
-        this._routerSubscription = this.router.events.subscribe(function (navigationEnd) {
+        this._routerSubscription = this.router
+            .events
+            .subscribe(function (navigationEnd) {
             if (navigationEnd instanceof NavigationEnd) {
                 _this._urls.length = 0;
-                _this.generateBreadcrumbTrail(navigationEnd.urlAfterRedirects ? navigationEnd.urlAfterRedirects : navigationEnd.url);
+                _this.generateBreadcrumbTrail(navigationEnd.urlAfterRedirects
+                    ? navigationEnd.urlAfterRedirects
+                    : navigationEnd.url);
             }
         });
     };

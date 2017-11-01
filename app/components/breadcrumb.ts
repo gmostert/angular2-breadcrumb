@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, OnChanges} from '@angular/core';
-import {Router, NavigationEnd} from '@angular/router';
+import {Event, NavigationEnd, Router} from '@angular/router';
 import {BreadcrumbService} from './breadcrumbService';
 
 /**
@@ -38,13 +38,18 @@ export class BreadcrumbComponent implements OnInit, OnChanges {
             this._urls.unshift(this.prefix);
         }
 
-        this._routerSubscription = this.router.events.subscribe((navigationEnd:NavigationEnd) => {
-
-           if (navigationEnd instanceof NavigationEnd) {
-                this._urls.length = 0; //Fastest way to clear out array
-                this.generateBreadcrumbTrail(navigationEnd.urlAfterRedirects ? navigationEnd.urlAfterRedirects : navigationEnd.url);
-            }
-        });
+        this._routerSubscription = this.router
+            .events
+            .subscribe((navigationEnd: Event) => {
+                if (navigationEnd instanceof NavigationEnd) {
+                    this._urls.length = 0; //Fastest way to clear out array
+                    this.generateBreadcrumbTrail(
+                        navigationEnd.urlAfterRedirects
+                            ? navigationEnd.urlAfterRedirects
+                            : navigationEnd.url
+                    );
+                }
+            });
     }
 
     ngOnChanges(changes: any): void {
