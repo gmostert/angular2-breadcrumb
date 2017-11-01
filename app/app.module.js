@@ -9,7 +9,7 @@ var breadcrumb_1 = require("./components/breadcrumb");
 var breadcrumbService_1 = require("./components/breadcrumbService");
 __export(require("./components/breadcrumb"));
 __export(require("./components/breadcrumbService"));
-var Ng2BreadcrumbModule = (function () {
+var Ng2BreadcrumbModule = /** @class */ (function () {
     function Ng2BreadcrumbModule() {
     }
     Ng2BreadcrumbModule.forRoot = function () {
@@ -18,22 +18,22 @@ var Ng2BreadcrumbModule = (function () {
             providers: [breadcrumbService_1.BreadcrumbService]
         };
     };
+    Ng2BreadcrumbModule.decorators = [
+        { type: core_1.NgModule, args: [{
+                    imports: [
+                        common_1.CommonModule
+                    ],
+                    declarations: [
+                        breadcrumb_1.BreadcrumbComponent
+                    ],
+                    exports: [
+                        breadcrumb_1.BreadcrumbComponent
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    Ng2BreadcrumbModule.ctorParameters = function () { return []; };
     return Ng2BreadcrumbModule;
 }());
-Ng2BreadcrumbModule.decorators = [
-    { type: core_1.NgModule, args: [{
-                imports: [
-                    common_1.CommonModule
-                ],
-                declarations: [
-                    breadcrumb_1.BreadcrumbComponent
-                ],
-                exports: [
-                    breadcrumb_1.BreadcrumbComponent
-                ]
-            },] },
-];
-/** @nocollapse */
-Ng2BreadcrumbModule.ctorParameters = function () { return []; };
 exports.Ng2BreadcrumbModule = Ng2BreadcrumbModule;
 //# sourceMappingURL=app.module.js.map

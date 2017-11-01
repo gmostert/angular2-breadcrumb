@@ -1,9 +1,3 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
 import { Injectable } from "@angular/core";
 var BreadcrumbService = (function () {
     function BreadcrumbService() {
@@ -52,17 +46,17 @@ var BreadcrumbService = (function () {
         return name ? name : routeEnd;
     };
     BreadcrumbService.prototype.hideRoute = function (route) {
-        if (!this.hideRoutes.includes(route)) {
+        if (this.hideRoutes.indexOf(route) === -1) {
             this.hideRoutes.push(route);
         }
     };
     BreadcrumbService.prototype.hideRouteRegex = function (routeRegex) {
-        if (!this.hideRoutesRegex.includes(routeRegex)) {
+        if (this.hideRoutesRegex.indexOf(routeRegex) === -1) {
             this.hideRoutesRegex.push(routeRegex);
         }
     };
     BreadcrumbService.prototype.isRouteHidden = function (route) {
-        var hide = this.hideRoutes.includes(route);
+        var hide = this.hideRoutes.indexOf(route) > -1;
         this.hideRoutesRegex.forEach(function (value) {
             if (new RegExp(value).exec(route)) {
                 hide = true;
@@ -70,9 +64,10 @@ var BreadcrumbService = (function () {
         });
         return hide;
     };
+    BreadcrumbService.decorators = [
+        { type: Injectable },
+    ];
+    BreadcrumbService.ctorParameters = function () { return []; };
     return BreadcrumbService;
 }());
-BreadcrumbService = __decorate([
-    Injectable()
-], BreadcrumbService);
 export { BreadcrumbService };
