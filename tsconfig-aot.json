@@ -11,7 +11,9 @@
         "declaration": true,
         "rootDir": "./app",
         "outDir": "./bundles",
-        "lib": ["dom", "es2016"]
+        "lib": ["dom", "es2016"],
+        "strictNullChecks": true,
+        "skipLibCheck": true
     },
     "angularCompilerOptions": {
         "genDir": "aot",
