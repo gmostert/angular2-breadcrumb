@@ -47,7 +47,7 @@ export class BreadcrumbComponent implements OnInit, OnChanges {
         });
     }
 
-    ngOnChanges(changes: any): void {
+    ngOnChanges(): void {
         if (!this._urls) {
             return;
         }
