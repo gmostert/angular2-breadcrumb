@@ -17,9 +17,9 @@ var BreadcrumbComponent = (function () {
     BreadcrumbComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._urls = new Array();
-        if (this.prefix.length > 0) {
-            this._urls.unshift(this.prefix);
-        }
+
+        this.generateBreadcrumbTrail(this.router.url);
+        
         this._routerSubscription = this.router.events.subscribe(function (navigationEnd) {
             if (navigationEnd instanceof router_1.NavigationEnd) {
                 _this._urls.length = 0; //Fastest way to clear out array
