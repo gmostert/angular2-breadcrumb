@@ -1,4 +1,8 @@
-# ng2-breadcrumb
+# ng5-breadcrumb
+
+This component is a fork from https://github.com/gmostert/ng5-breadcrumb.
+The component has been updated to work with Angular 5 and Angular CLI 1.5.
+
 This component generates a breadcrumb trail, as you navigate to child routes using the @angular/router. It interprets the browser URL of a navigate request, 
 in the same way the component router does to match a path to a specific component, to build up a hierarchy of available parent/child routes for that destination.
 
@@ -14,15 +18,15 @@ Optionally uses bootstrap.css (v 3.x.x) for styling of some elements (although t
 ## Install
 Install the module via npm:
 
-    npm install ng2-breadcrumb --save
+    npm install ng5-breadcrumb --save
 
 ## Usage
 Import the this module into your module using forRoot()
 
-    import {Ng2BreadcrumbModule} from 'ng2-breadcrumb/ng2-breadcrumb';
+    import {Ng5BreadcrumbModule} from 'ng5-breadcrumb';
 
 	@NgModule({
-        imports: [Ng2BreadcrumbModule.forRoot()]
+        imports: [Ng5BreadcrumbModule.forRoot()]
     })
     export class AppModule {
         ...
@@ -30,10 +34,10 @@ Import the this module into your module using forRoot()
 
 Alternatively you can import the this module into your module and manually provide its service
 
-	import {Ng2BreadcrumbModule, BreadcrumbService} from 'ng2-breadcrumb/ng2-breadcrumb';
+	import {ng5BreadcrumbModule, BreadcrumbService} from 'ng5-breadcrumb';
 
 	@NgModule({
-        imports: [Ng2BreadcrumbModule],
+        imports: [ng5BreadcrumbModule],
         providers: [BreadcrumbService]
     })
     export class AppModule {
@@ -88,10 +92,6 @@ Hide certain routes (paths) from the breadcrumb trail using an exact url or rege
     npm install
     npm build
 
-To build a standalone bundle:
+## Running with Angular CLI
 
-    npm bundles
-
-## Running
-
-    npm start
+    ng serve

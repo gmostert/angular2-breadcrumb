@@ -1,51 +1,49 @@
 {
-  "name": "ng2-breadcrumb",
-  "version": "0.5.14",
-  "description": "A component that creates a breadcrumb trail for router paths",
-  "scripts": {
-    "start": "tsc && concurrently \"npm run ngc\" \"npm run lite\" ",
-    "lite": "lite-server",
-    "tsc": "ngc -w",
-    "ngc": "ngc",
-    "build": "ngc",
-    "bundles": "ngc -m system --rootDir ./app --outFile ./bundles/ng2-breadcrumb.js",
-    "build:aot": "rimraf bundles && ngc -p tsconfig-aot.json"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gmostert/ng2-breadcrumb.git"
-  },
-  "keywords": [
-    "angular2"
-  ],
-  "author": "Gerhard Mostert",
+  "name": "@akiocloud/ng5-breadcrumb",
+  "version": "0.0.7",
   "license": "MIT",
-  "main": "bundles/app.module.js",
-  "typings": "bundles/app.module.d.ts",
+  "scripts": {
+    "transpile": "ngc",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/bundles/breadcrumb.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/breadcrumb.umd.min.js",
+    "build": "npm run transpile && npm run package && npm run minify"
+  },
+  "private": true,
   "dependencies": {
-    "@angular/common": "^4.0.1",
-    "@angular/core": "^4.0.1",
-    "@angular/http": "^4.0.1",
-    "@angular/platform-browser": "^4.0.1",
-    "@angular/platform-browser-dynamic": "^4.0.1",
-    "@angular/router": "^4.0.1",
-    "bootstrap": "4.0.0-alpha.6",
-    "core-js": "2.4.1",
-    "reflect-metadata": "^0.1.9",
-    "rxjs": "^5.3.0",
-    "systemjs": "0.19.27",
-    "zone.js": "^0.8.5"
+    "@angular/animations": "^5.0.0",
+    "@angular/common": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "@angular/forms": "^5.0.0",
+    "@angular/http": "^5.0.0",
+    "@angular/platform-browser": "^5.0.0",
+    "@angular/platform-browser-dynamic": "^5.0.0",
+    "@angular/router": "^5.0.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.5.2",
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/compiler": "^4.0.1",
-    "@angular/compiler-cli": "^4.0.1",
-    "@angular/platform-server": "^4.0.1",
-    "@types/core-js": "^0.9.35",
-    "@types/jasmine": "^2.5.40",
-    "@types/moment": "^2.13.0",
-    "@types/node": "^6.0.54",
-    "concurrently": "^3.1.0",
-    "lite-server": "^2.2.2",
-    "typescript": "^2.2.2"
+    "@angular/cli": "1.5.0",
+    "@angular/compiler": "^5.2.4",
+    "@angular/compiler-cli": "^5.2.4",
+    "@angular/language-service": "^5.0.0",
+    "@types/jasmine": "~2.5.53",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~3.2.0",
+    "jasmine-core": "~2.6.2",
+    "jasmine-spec-reporter": "~4.1.0",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.1.1",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.1.2",
+    "rollup": "^0.55.3",
+    "ts-node": "~3.2.0",
+    "tslint": "~5.7.0",
+    "typescript": "^2.4.2",
+    "uglify-js": "^3.3.10"
   }
 }
